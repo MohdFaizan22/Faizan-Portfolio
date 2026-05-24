@@ -433,7 +433,7 @@ function ProjectCard({ n, title, stack, img, link, details, underDevelopment, i,
                 <span className="w-1 h-1 md:w-1.5 md:h-1.5 rounded-full inline-block bg-white" />
                 {n}
               </div>
-              <h3 className="font-sans text-xl md:text-4xl uppercase leading-[1.1] mb-2 md:mb-4 text-white font-bold">
+              <h3 className="font-sans text-2xl md:text-4xl uppercase leading-[1.1] mb-2 md:mb-4 text-white font-bold">
                 {title}
               </h3>
               {/* Stack pills */}
@@ -1014,35 +1014,39 @@ function Index() {
             alt="Data science portrait"
             width={1600}
             height={1200}
-            className="absolute inset-0 w-full h-full object-contain object-right opacity-100"
+            className="absolute inset-0 w-full h-full object-cover md:object-contain object-[60%_center] md:object-right opacity-100"
           />
+
+          {/* Gradients to ensure text readability on mobile and desktop */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 md:via-transparent to-transparent pointer-events-none z-[5]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 md:via-transparent to-transparent pointer-events-none z-[5]" />
 
           <div className="relative z-10 w-full px-6 md:px-10 pb-36 md:pb-48 pt-32">
             <div className="max-w-5xl">
-              <p className="text-xs tracking-widest text-white/60 uppercase mb-6 animate-hero-badge">AI & DATA SCIENCE</p>
-              <h1 className="-ml-1 md:-ml-2 text-white mb-16 text-5xl md:text-7xl font-display heading-glow animate-hero-title">
+              <p className="text-[10px] md:text-xs tracking-widest text-white/60 uppercase mb-6 animate-hero-badge">AI & DATA SCIENCE</p>
+              <h1 className="-ml-1 md:-ml-2 text-white mb-6 md:mb-16 text-[12vw] sm:text-5xl md:text-7xl font-display heading-glow animate-hero-title leading-[0.9]">
                 MOHD<br />FAIZANULLAH
               </h1>
-              <p className="mt-8 text-lg md:text-2xl text-white/80 max-w-2xl animate-hero-subtitle">
+              <p className="mt-4 md:mt-8 text-base md:text-2xl text-white/80 max-w-2xl animate-hero-subtitle">
                 Engineering The Future With AI.
               </p>
-              <div className="flex flex-wrap items-center gap-6 md:gap-8 mt-10 animate-hero-cta">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8 mt-10 animate-hero-cta">
                 <a
                   href="#contact"
                   onClick={(e) => handleNavClick(e, "#contact")}
-                  className="text-base md:text-lg underline-link underline underline-offset-8"
+                  className="text-sm md:text-lg underline-link pb-1"
                 >
                   Lets Connect ↗
                 </a>
                 <a
                   href={resumePdf}
                   download
-                  className="relative group px-6 py-3 rounded-full border border-white/30 text-[11px] md:text-xs tracking-widest uppercase font-bold overflow-hidden transition-all hover:border-white shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]"
+                  className="relative group px-6 py-3 rounded-full border border-white/30 text-[10px] md:text-xs tracking-widest uppercase font-bold overflow-hidden transition-all hover:border-white shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(255,255,255,0.4)]"
                 >
                   <span className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.22,1,0.36,1]" />
                   <span className="relative z-10 group-hover:text-black transition-colors duration-300 flex items-center gap-2">
                     Download Resume 
-                    <span className="text-lg leading-none group-hover:animate-bounce">↓</span>
+                    <span className="text-base md:text-lg leading-none group-hover:animate-bounce">↓</span>
                   </span>
                 </a>
               </div>
@@ -1059,11 +1063,11 @@ function Index() {
         <ParticleField count={45} linkDistance={100} speed={0.5} mouseRadius={90} color="200,200,255" />
         <Reveal>
           <div className="max-w-5xl mx-auto mb-16">
-            <div className="flex items-center gap-6 md:gap-8">
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
               <motion.img
                 src={profile}
                 alt="Mohd Faizanullah"
-                className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover object-center border border-white/20 shrink-0"
+                className="w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full object-cover object-center border border-white/20 shrink-0"
               />
               <motion.div className="text-sm md:text-lg tracking-widest uppercase text-white/60">
                 About
